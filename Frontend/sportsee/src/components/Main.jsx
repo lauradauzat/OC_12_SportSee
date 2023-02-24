@@ -1,8 +1,42 @@
 import ActiviteQuotidienne from "./ActiviteQuotidienne";
+import DureeSession from "./DureeSession";
+import Radar from "./Radar";
 
-function Main({...data}) {
+function Main() {
 
-    console.log(data.data.data);
+   
+  const USER_MAIN_DATA = [
+    {
+        id: 12,
+        userInfos: {
+            firstName: 'Karl',
+            lastName: 'Dovineau',
+            age: 31,
+        },
+        todayScore: 0.12,
+        keyData: {
+            calorieCount: 1930,
+            proteinCount: 155,
+            carbohydrateCount: 290,
+            lipidCount: 50
+        }
+    },
+    {
+        id: 18,
+        userInfos: {
+            firstName: 'Cecilia',
+            lastName: 'Ratorez',
+            age: 34,
+        },
+        score: 0.3,
+        keyData: {
+            calorieCount: 2500,
+            proteinCount: 90,
+            carbohydrateCount: 150,
+            lipidCount: 120
+        }
+    }
+]
 
 
     return (
@@ -12,7 +46,7 @@ function Main({...data}) {
           <h1>
             Bonjour 
          
-        {/*   <span className="red">  {data.data.data.userInfos.firstName}</span>  */}
+          <span className="red">  {USER_MAIN_DATA[1].userInfos.firstName}</span> 
           </h1>
           <p>
             Félicitation ! Vous avez explosé vos objectifs hier 👏
@@ -24,31 +58,32 @@ function Main({...data}) {
           <div className="cal white-bg">
             <img src="/img/calories-icon.png" alt="calories" />
             <div className="right-text">
-         {/*    <span id="cal-data">{data.data.data.keyData.calorieCount} g</span> */}
+            <span id="cal-data">{USER_MAIN_DATA[1].keyData.calorieCount} g</span>
               <p>Calories</p>
             </div>
           </div>
           <div className="prot white-bg">
             <img src="/img/protein-icon.png" alt="protein" />
             <div className="right-text">
-        {/*     <span id="cal-prot">{data.data.data.keyData.proteinCount} g</span>  */}
+            <span id="cal-prot">{USER_MAIN_DATA[1].keyData.proteinCount} g</span> 
               <p>Protéines</p>
             </div>
           </div>
-          <div className="obj red-bg"></div>
-          <div className="radar dark-bg"></div>
+          <DureeSession></DureeSession>
+          <Radar></Radar>
+      
           <div className="score white-bg"></div>
           <div className="gluc white-bg">
             <img src="/img/carbs-icon.png" alt="carbs" />
             <div className="right-text">
-          {/*     <span id="gluc-data">{data.data.data.keyData.carbohydrateCount} g</span> */}
+              <span id="gluc-data">{USER_MAIN_DATA[1].keyData.carbohydrateCount} g</span>
               <p>Glucides</p>
             </div>
           </div>
           <div className="lip white-bg">
             <img src="/img/fat-icon.png" alt="fat" />
             <div className="right-text">
-        {/*       <span id="lip-data">{data.data.data.keyData.lipidCount} g</span> */}
+              <span id="lip-data">{USER_MAIN_DATA[1].keyData.lipidCount} g</span>
               <p>Lipides</p>
             </div>
           </div>

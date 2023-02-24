@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <Main data={data}></Main>
+      <Main ></Main>
     </>
     
   );

@@ -122,7 +122,7 @@ main {
     grid-area: prot;
 }
 
-.obj {
+.session {
     grid-area: obj;
 }
 
@@ -189,3 +189,6 @@ main {
     font-weight: 700;
     font-size: 20px;
 }
+
+
+/* rechart */
