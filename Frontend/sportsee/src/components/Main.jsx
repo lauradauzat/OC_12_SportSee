@@ -1,6 +1,7 @@
 import ActiviteQuotidienne from "./ActiviteQuotidienne";
 import DureeSession from "./DureeSession";
 import Radar from "./Radar";
+import Score from "./Score" 
 
 function Main() {
 
@@ -71,8 +72,8 @@ function Main() {
           </div>
           <DureeSession></DureeSession>
           <Radar></Radar>
-      
-          <div className="score white-bg"></div>
+          <Score></Score>
+    
           <div className="gluc white-bg">
             <img src="/img/carbs-icon.png" alt="carbs" />
             <div className="right-text">
