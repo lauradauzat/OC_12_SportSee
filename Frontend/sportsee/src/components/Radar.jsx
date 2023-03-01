@@ -1,15 +1,15 @@
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 function RadarChartComponent() {
   const values = {
     userId: 18,
     kind: {
-      1: 'cardio',
-      2: 'energy',
-      3: 'endurance',
-      4: 'strength',
-      5: 'speed',
-      6: 'intensity'
+      1: 'Cardio',
+      2: 'Energie',
+      3: 'Endurance',
+      4: 'Force',
+      5: 'Vitesse',
+      6: 'Intensité'
     },
     data: [
       {
@@ -43,20 +43,22 @@ function RadarChartComponent() {
     const kindName = values.kind[d.kind];
     return {
       name: kindName,
+      value: d.value,
       [kindName]: d.value
     };
   });
 
+
   return (
     <div className='radar dark-bg'>
-    <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="100%">
         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-        <PolarGrid />
-        <PolarAngleAxis dataKey="name" />
-        <PolarRadiusAxis />
-        <Radar name="Mike" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        <PolarGrid gridType="polygon" radialLines={false} />
+          <PolarAngleAxis dataKey="name" />
+  
+          <Radar name="test" dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.6}  />
         </RadarChart>
-    </ResponsiveContainer>
+      </ResponsiveContainer>
     </div>
   );
 }

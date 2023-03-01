@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, XAxis, YAxis, Tooltip, Legend, Line, ReferenceLine } from 'recharts';
+import { LineChart, XAxis, YAxis, Tooltip, Legend, Line } from 'recharts';
 
 function DureeSession() {
     const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
@@ -46,13 +46,12 @@ function DureeSession() {
   return (
     <div className="session red-bg">
     <LineChart width={300} height={300} data={transformedSessions}>
-    <XAxis dataKey="day" tickCount={7} />
+    <XAxis dataKey="day" tickCount={7}/>
         <YAxis hide={true} />
       <Tooltip />
       <Legend />
       <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" />
-      <ReferenceLine y={250} stroke="red" label="Max" />
-    </LineChart>
+   </LineChart>
     </div>
 
   );

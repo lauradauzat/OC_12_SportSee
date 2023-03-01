@@ -37,11 +37,11 @@ function Score() {
             innerRadius={90}
             outerRadius={110}
             fill="#f5f5f5"
-            paddingAngle={5}
+            paddingAngle={0}
             dataKey="value"
             labelLine={false}
             label={renderLabel}
-           
+            
             strokeLinecap="round"
           >
             {data.map((entry, index) => (

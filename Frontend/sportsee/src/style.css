@@ -124,8 +124,13 @@ main {
 
 .session {
     grid-area: obj;
+
 }
 
+.session .recharts-cartesian-axis-tick-value {
+    fill: #ffffff;
+  }
+  
 .radar {
     grid-area: radar;
 }
