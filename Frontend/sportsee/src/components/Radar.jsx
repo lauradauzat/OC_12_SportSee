@@ -56,7 +56,7 @@ function RadarChartComponent() {
         <PolarGrid gridType="polygon" radialLines={false} />
           <PolarAngleAxis dataKey="name" />
   
-          <Radar name="test" dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.6}  />
+          <Radar name="radar" dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.6}  />
         </RadarChart>
       </ResponsiveContainer>
     </div>

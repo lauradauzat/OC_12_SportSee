@@ -12,6 +12,14 @@ body {
     color:  #FF0000
 }
 
+.grey {
+    color:  #7F7F7F;
+}
+
+.white {
+    color: #ffffffd2;
+}
+
 .red-bg {
     background-color:  #FF0000;
 }
@@ -110,9 +118,37 @@ main {
     margin-left: 177px;
 }
 
+h2 {
+    padding-left: 30px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
 .actquot {
     grid-area: actquot;
+    display: flex;
+    flex-direction: column;
 }
+
+.actquot line.recharts-cartesian-axis-line {
+    display: none;
+}
+
+.recharts-cartesian-grid-horizontal line:first-child {
+    display: none;
+}
+
+line.recharts-cartesian-axis-tick-line {
+    display: none;
+}
+
+.actquot ul.recharts-default-legend {
+    display: flex;
+    width: max-content;
+}
+  
+  
 
 .cal {
     grid-area: cal;
@@ -124,12 +160,23 @@ main {
 
 .session {
     grid-area: obj;
+    display: flex;
+    flex-direction: column;
+   
+}
 
+.session h2 {
+    color: rgba(255, 255, 255, 0.678); 
+    
+}
+
+.session line.recharts-cartesian-axis-line {
+    display: none;
 }
 
 .session .recharts-cartesian-axis-tick-value {
-    fill: #ffffff;
-  }
+    fill:  rgba(255, 255, 255, 0.678); 
+}
   
 .radar {
     grid-area: radar;
@@ -137,7 +184,29 @@ main {
 
 .score {
     grid-area: score;
+    flex-direction: column;
+ 
 }
+
+.score h2 {
+    margin-bottom: 0px;
+    width: 100%;
+    margin-left: 40px;
+}
+
+.score #scoreNum {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+
+.score tspan {
+
+    font-weight: 300;
+}
+
+
 
 .lip {
     grid-area: lip;
@@ -170,6 +239,10 @@ main {
     align-items: center;
 }
 
+.charts-container > .actquot {
+    align-items: flex-start;
+}
+
 .charts-container > div > img {
     width:60px; 
     height: 60px;
@@ -196,3 +269,11 @@ main {
 
 
 /* rechart */
+
+.recharts-text {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  [role=dialog]{
+    outline: none;
+}

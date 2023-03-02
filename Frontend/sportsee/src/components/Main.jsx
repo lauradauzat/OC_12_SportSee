@@ -2,10 +2,11 @@ import ActiviteQuotidienne from "./ActiviteQuotidienne";
 import DureeSession from "./DureeSession";
 import Radar from "./Radar";
 import Score from "./Score" 
+import Service from "../service";
 
 function Main() {
 
-   
+
   const USER_MAIN_DATA = [
     {
         id: 12,
