@@ -1,8 +1,10 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer} from 'recharts';
 
-function Score() {
-  const score = 0.3;
+function Score(props) {
+  const score = props.score;
+
+
   const scorePct = score * 100; 
   const rest = 100 - scorePct;
 
@@ -21,7 +23,7 @@ function Score() {
       style={{ fontSize: '20px' }}
     >
       <tspan id="scoreNum" x={cx} dy="-30px">{`${scorePct}%`}</tspan>
-      <tspan class="grey" x={cx} dy="30px">de votre objectif</tspan>
+      <tspan className="grey" x={cx} dy="30px">de votre objectif</tspan>
     </text>
   );
   

@@ -6,23 +6,13 @@ import Navbar from './components/Navbar';
 
 import './style.css';
 
+import mockData from './assets/mockdata';
 
 
 
 function App() {
 
-
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-      async function fetchData() {
-        const response = await fetch('http://localhost:3001/user/18');
-        const json = await response.json();
-        setData(json);
-      }
-      fetchData();
-    }, []);
-
+ 
 
   return (
     <>

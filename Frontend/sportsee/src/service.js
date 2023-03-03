@@ -1,21 +1,49 @@
 import mockData from './assets/mockdata';
+import { useState, useEffect } from 'react';
+
 
 export default class Service {
-  constructor(userId) {
-    this._userId = userId;
-    this.mockData = mockData;
-    this.userData = this.getUserData();
+  constructor() {
+    const IdInParams = new URLSearchParams(window.location.search).get('id');
+    this._userId = IdInParams ? IdInParams : 12;
+    this.data = mockData; // initialize data with mockData
+    this.mainData = this.getMainData();
     this.firstName = this.getFirstName();
-    this.keyDatas = this.getKeyDatas();
-    this.Score = this.getScore();
-    this.Performance = this.getPerformance();
-    this.AverageSessions = this.getAverageSessions();
-    this.Activity = this.getActivity();
+    this.calories = this.getKeyData('calorieCount');
+    this.protein = this.getKeyData('proteinCount');
+    this.carbs = this.getKeyData('carbohydrateCount');
+    this.fat = this.getKeyData('lipidCount');
+    this.sessions = this.getSessions();
+    this.performance = this.getPerformance();
+    this.score = this.getScore();
+  }
+
+
+  getMainData() {
+    return this.data.USER_MAIN_DATA.find(user => user.id === this._userId);
   }
 
   getFirstName() {
-    const { user } = this.mockData;
-    return user.firstName;
+    return this.data.userInfos.firstName;
+  }
+
+  getKeyData(key) {
+    return this.data.keyData[key];
+  }
+
+  getSessions() {
+    const user =  this.data.USER_AVERAGE_SESSIONS.find(user => user.userId === this._userId);
+    return user.sessions;
+  } 
+
+  getPerformance() {
+    const user =  this.data.USER_PERFORMANCE.find(user => user.userId === this._userId);
+    return user;
+  }
+
+  getScore() {
+    const user =  this.data.USER_MAIN_DATA.find(user => user.id === this._userId);
+    return user.todayScore;
   }
 
 

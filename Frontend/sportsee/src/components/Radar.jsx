@@ -1,46 +1,11 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
-function RadarChartComponent() {
-  const values = {
-    userId: 18,
-    kind: {
-      1: 'Cardio',
-      2: 'Energie',
-      3: 'Endurance',
-      4: 'Force',
-      5: 'Vitesse',
-      6: 'Intensité'
-    },
-    data: [
-      {
-        value: 200,
-        kind: 1
-      },
-      {
-        value: 240,
-        kind: 2
-      },
-      {
-        value: 80,
-        kind: 3
-      },
-      {
-        value: 80,
-        kind: 4
-      },
-      {
-        value: 220,
-        kind: 5
-      },
-      {
-        value: 110,
-        kind: 6
-      }
-    ]
-  };
+function RadarChartComponent(props) {
 
-  const data = values.data.map(d => {
-    const kindName = values.kind[d.kind];
+  const performance = props.performance; 
+
+  const data = performance.data.map(d => {
+    const kindName = performance.kind[d.kind];
     return {
       name: kindName,
       value: d.value,

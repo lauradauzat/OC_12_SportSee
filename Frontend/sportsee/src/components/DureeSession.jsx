@@ -1,38 +1,11 @@
 import React from 'react';
 import { LineChart, XAxis, YAxis, Tooltip, Line } from 'recharts';
 
-function DureeSession() {
+function DureeSession(props) {
+  const sessions = props.sessions;
+  
     const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-    const sessions =  [
-        {
-            day: 1,
-            sessionLength: 30
-        },
-        {
-            day: 2,
-            sessionLength: 23
-        },
-        {
-            day: 3,
-            sessionLength: 45
-        },
-        {
-            day: 4,
-            sessionLength: 50
-        },
-        {
-            day: 5,
-            sessionLength: 0
-        },
-        {
-            day: 6,
-            sessionLength: 0
-        },
-        {
-            day: 7,
-            sessionLength: 60
-        }
-    ]
+    
 
     const transformedSessions = sessions.map(session => {
         const dayOfWeek = daysOfWeek[session.day-1];
