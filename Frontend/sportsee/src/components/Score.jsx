@@ -3,9 +3,10 @@ import { PieChart, Pie, Cell, ResponsiveContainer} from 'recharts';
 
 function Score(props) {
   const score = props.score;
-
+  //console.log(score);
 
   const scorePct = score * 100; 
+  console.log(scorePct);
   const rest = 100 - scorePct;
 
   const data = [

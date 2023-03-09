@@ -4,9 +4,13 @@ import Radar from "./Radar";
 import Score from "./Score" 
 import Service from "../service";
 
-function Main() {
 
-  const service = new Service();
+function Main({ dataAPI, id}) {
+  if (!dataAPI) {
+    return <div>Loading...</div>
+  }
+
+  const service = new Service(id, dataAPI);
   const firstName = service.firstName;
   const calories = service.calories; 
   const protein = service.protein;
@@ -16,6 +20,7 @@ function Main() {
   const performance = service.performance; 
   const score = service.score; 
 
+  //console.log(firstName, calories, protein, carbs, fat, sessions, performance, score);
 
 
     return (

@@ -3,6 +3,7 @@ import { LineChart, XAxis, YAxis, Tooltip, Line } from 'recharts';
 
 function DureeSession(props) {
   const sessions = props.sessions;
+  console.log(sessions);
   
     const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
     
