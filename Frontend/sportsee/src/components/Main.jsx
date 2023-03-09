@@ -30,7 +30,7 @@ function Main({ dataAPI, id}) {
           <h1>
             Bonjour 
          
-          <span className="red">{firstName}</span> 
+          <span className="red">  {firstName}</span> 
           </h1>
           <p>
             Félicitation ! Vous avez explosé vos objectifs hier 👏
