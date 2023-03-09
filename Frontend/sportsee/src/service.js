@@ -18,6 +18,21 @@ export default class Service {
     this.score = this.getScore();
   }
 
+/*   This need to be implemented
+  
+  useEffect(() => {
+    if (IdInParams) {
+      let url = 'http://localhost:3001/user/';
+      url += IdInParams;
+      async function fetchData() {
+        const response = await fetch(url);
+        const json = await response.json();
+        setData(json);
+      }
+      fetchData();
+    }
+  }, [IdInParams]);
+ */
 
   getMainData() {
     return this.data.USER_MAIN_DATA.find(user => user.id === this._userId);
