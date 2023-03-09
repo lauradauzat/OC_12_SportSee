@@ -17,8 +17,10 @@ function Main({ dataAPI, id}) {
   const carbs = service.carbs;
   const fat = service.fat;
   const sessions = service.sessions; 
+  const activity = service.activity;
+  console.log(activity);
   const performance = service.performance; 
-  const score = service.score; 
+  const {scorePct,rest} = service.score; 
 
   //console.log(firstName, calories, protein, carbs, fat, sessions, performance, score);
 
@@ -38,7 +40,7 @@ function Main({ dataAPI, id}) {
         </div>
 
         <div className="charts-container">
-          <ActiviteQuotidienne></ActiviteQuotidienne>
+          <ActiviteQuotidienne activity={activity}></ActiviteQuotidienne>
           <div className="cal white-bg">
             <img src="/img/calories-icon.png" alt="calories" />
             <div className="right-text">
@@ -55,7 +57,7 @@ function Main({ dataAPI, id}) {
           </div>
           <DureeSession sessions={sessions}></DureeSession>
           <Radar performance={performance}></Radar>
-          <Score score={score}></Score>
+          <Score scorePct={scorePct} rest={rest}></Score>
     
           <div className="gluc white-bg">
             <img src="/img/carbs-icon.png" alt="carbs" />

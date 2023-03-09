@@ -1,48 +1,14 @@
 import React from 'react';
 import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Bar, ResponsiveContainer } from 'recharts';
 
-function ActiviteQuotidienne() {
-  const sessionsData = [
-    {
-      day: '2020-07-01',
-      kilograms: 80,
-      calories: 240,
-    },
-    {
-      day: '2020-07-02',
-      kilograms: 80,
-      calories: 220,
-    },
-    {
-      day: '2020-07-03',
-      kilograms: 81,
-      calories: 280,
-    },
-    {
-      day: '2020-07-04',
-      kilograms: 81,
-      calories: 290,
-    },
-    {
-      day: '2020-07-05',
-      kilograms: 80,
-      calories: 160,
-    },
-    {
-      day: '2020-07-06',
-      kilograms: 78,
-      calories: 162,
-    },
-    {
-      day: '2020-07-07',
-      kilograms: 76,
-      calories: 390,
-    },
-  ];
+function ActiviteQuotidienne(props) {
+
+  const sessionsData = props.activity;
+
 
   const data = sessionsData.map((session) => ({
     name: parseInt(session.day.split('-')[2]),
-    kg: session.kilograms,
+    kg: session.kilogram,
     kal: session.calories,
   }));
 

@@ -2,17 +2,10 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 
 function RadarChartComponent(props) {
 
-  const performance = props.performance; 
+console.log(props);
 
-  const data = performance.data.map(d => {
-    const kindName = performance.kind[d.kind];
-    return {
-      name: kindName,
-      value: d.value,
-      [kindName]: d.value
-    };
-  });
-
+const data = props.performance; 
+//console.log(data);
 
   return (
     <div className='radar dark-bg'>
