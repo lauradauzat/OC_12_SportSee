@@ -3,14 +3,7 @@ import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Bar, Responsive
 
 function ActiviteQuotidienne(props) {
 
-  const sessionsData = props.activity;
-
-
-  const data = sessionsData.map((session) => ({
-    name: parseInt(session.day.split('-')[2]),
-    kg: session.kilogram,
-    kal: session.calories,
-  }));
+  const activity = props.activity;
 
 
   const CustomTooltip = ({ active, payload }) => {
@@ -31,7 +24,7 @@ function ActiviteQuotidienne(props) {
       <ResponsiveContainer width="100%" height="100%">
         
       
-      <BarChart data={data} barGap={20} >
+      <BarChart data={activity} barGap={20} >
  
          <Tooltip content={<CustomTooltip />} />
         <Legend width={100} wrapperStyle={{ top: -70, right: 220, lineHeight: '40px' }} />

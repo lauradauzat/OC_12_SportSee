@@ -1,4 +1,5 @@
 import mockData from './assets/mockdata';
+import { transformedSessions, transformedPerformance, transformedScore, transformedActivity } from './model';
 
 const mock = false;
 
@@ -29,35 +30,21 @@ export default class Service {
   }
 
   getActivity() {
-    return mock
+    const activity = mock
      ? this.data.USER_ACTIVITY.find(user => user.userId === this._userId)
       : this.data.activity.data.sessions;
+     
+    const result  = transformedActivity(activity) ; 
+    return result;
       
   }
 
   getSessions() {
-/*    return mock
-      ? this.data.USER_AVERAGE_SESSIONS.find(user => user.userId === this._userId).sessions
-      : this.data.averageSessions.data.sessions;  */
-
       const sessions = mock ? this.data.USER_AVERAGE_SESSIONS.find(user => user.userId === this._userId).sessions
       : this.data.averageSessions.data.sessions;
 
-      const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-
-      for(let i in sessions){
-        console.log(sessions[i]);
-     }
-
-      sessions.map(session => {
-        const dayOfWeek = daysOfWeek[session.day-1];
-        return {
-          ...session,
-          day: dayOfWeek
-        };
-      }); 
-
-      return sessions;
+       const result = transformedSessions(sessions);
+      return result;
 
   }
 
@@ -66,25 +53,14 @@ export default class Service {
       ? this.data.USER_PERFORMANCE.find(user => user.userId === this._userId)
       : this.data.performance.data;
 
-      const data = performance.data.map(d => {
-        const kindName = performance.kind[d.kind];
-        return {
-          name: kindName,
-          value: d.value,
-          [kindName]: d.value
-        };
-      }); 
-    
-      return data; 
+     const result = transformedPerformance(performance);
+    return result; 
   }
 
   getScore() {
-    const scorePct = this.mainData.todayScore * 100; 
-    const rest = 100 - scorePct;
-    return {
-      scorePct: scorePct,
-      rest: rest
-    };
+    const score = this.mainData.todayScore;
+    const result = transformedScore(score)
+    return result;
   } 
 
   
