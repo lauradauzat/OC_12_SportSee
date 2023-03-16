@@ -1,10 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // ES6
+
 import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Bar, ResponsiveContainer } from 'recharts';
 
 function ActiviteQuotidienne(props) {
 
   const activity = props.activity;
 
+  
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -40,6 +43,17 @@ function ActiviteQuotidienne(props) {
       </ResponsiveContainer>
     </div>
   );
+
 }
+
+ActiviteQuotidienne.propTypes = {
+  activity: PropTypes.arrayOf(
+    PropTypes.exact({
+      day: PropTypes.string.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
 
 export default ActiviteQuotidienne;

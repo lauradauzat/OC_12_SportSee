@@ -9,7 +9,11 @@ body {
 }
 
 .red {
-    color:  #FF0000
+    color:  #d11313
+}
+
+.darkRed {
+
 }
 
 .grey {
@@ -277,3 +281,6 @@ line.recharts-cartesian-axis-tick-line {
   [role=dialog]{
     outline: none;
 }
+
+/* activité quotidienne */
+
