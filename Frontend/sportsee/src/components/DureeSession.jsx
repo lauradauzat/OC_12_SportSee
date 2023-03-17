@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { LineChart, XAxis, YAxis, Tooltip, Line } from 'recharts';
 
 function DureeSession(props) {
@@ -42,5 +43,14 @@ function DureeSession(props) {
   );
   
 }
+
+DureeSession.propTypes = {
+  sessions: PropTypes.arrayOf(
+    PropTypes.exact({
+      day: PropTypes.string.isRequired,
+      sessionLength: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
 
 export default DureeSession;

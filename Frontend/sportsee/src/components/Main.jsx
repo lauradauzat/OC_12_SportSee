@@ -5,10 +5,13 @@ import Score from "./Score"
 import Service from "../service";
 
 
+
 function Main({ dataAPI, id}) {
   if (!dataAPI) {
     return <div>Loading...</div>
   }
+
+ 
 
   const service = new Service(id, dataAPI);
   const firstName = service.firstName;
@@ -18,7 +21,6 @@ function Main({ dataAPI, id}) {
   const fat = service.fat;
   const sessions = service.sessions; 
   const activity = service.activity;
-  console.log(activity);
   const performance = service.performance; 
   const {scorePct,rest} = service.score; 
 
@@ -78,5 +80,7 @@ function Main({ dataAPI, id}) {
         </>
     )
 }
+
+
 
 export default Main; 

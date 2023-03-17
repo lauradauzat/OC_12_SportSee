@@ -24,8 +24,7 @@ export default class DataTransformer {
       const kindName = performance.kind[d.kind];
       return {
         name: kindName,
-        value: d.value,
-        [kindName]: d.value
+        value: d.value
       };
     }); 
     return data;

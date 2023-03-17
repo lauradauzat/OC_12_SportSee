@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { PieChart, Pie, Cell, ResponsiveContainer} from 'recharts';
 
 function Score({scorePct,rest}) {
@@ -61,5 +63,10 @@ function Score({scorePct,rest}) {
   
   );
 }
+
+Score.propTypes = {
+  scorePct: PropTypes.number.isRequired,
+  rest: PropTypes.number.isRequired,
+};
 
 export default Score;

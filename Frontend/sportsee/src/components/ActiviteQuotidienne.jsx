@@ -7,7 +7,6 @@ function ActiviteQuotidienne(props) {
 
   const activity = props.activity;
 
-  
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -49,9 +48,9 @@ function ActiviteQuotidienne(props) {
 ActiviteQuotidienne.propTypes = {
   activity: PropTypes.arrayOf(
     PropTypes.exact({
-      day: PropTypes.string.isRequired,
-      kilogram: PropTypes.number.isRequired,
-      calories: PropTypes.number.isRequired,
+      name: PropTypes.number.isRequired,
+      kg: PropTypes.number.isRequired,
+      kal: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
 };

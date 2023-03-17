@@ -11,3 +11,4 @@ http://localhost:3000/user/${userId}/performance - retrieves a user's performanc
 
 Front 
 To start react app : npm start 
+Test when connected to API : http://localhost:3000/?id=12

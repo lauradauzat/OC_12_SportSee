@@ -11,6 +11,7 @@ function App() {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
 
+
   const [dataAPI, setDataAPI] = useState(null);
   const url = `http://localhost:3001/user/${id}`; 
 

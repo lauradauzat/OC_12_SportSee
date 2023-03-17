@@ -1,11 +1,11 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
+
 
 function RadarChartComponent(props) {
 
-console.log(props);
-
 const data = props.performance; 
-//console.log(data);
+console.log(data);
 
   return (
     <div className='radar dark-bg'>
@@ -20,5 +20,15 @@ const data = props.performance;
     </div>
   );
 }
+
+RadarChartComponent.propTypes = {
+  performance: PropTypes.arrayOf(
+    PropTypes.exact({
+      name: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
+
 
 export default RadarChartComponent;
