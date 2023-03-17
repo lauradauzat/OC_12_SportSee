@@ -23,10 +23,10 @@ function Score({scorePct,rest}) {
       y={cy} 
       textAnchor="middle" 
       dominantBaseline="central"
-      style={{ fontSize: '20px' }}
+      style={{ fontSize: '15px' }}
     >
-      <tspan id="scoreNum" x={cx} dy="-30px">{`${scorePct}%`}</tspan>
-      <tspan className="grey" x={cx} dy="30px">de votre objectif</tspan>
+      <tspan id="scoreNum" x={cx} dy="-25px">{`${scorePct}%`}</tspan>
+      <tspan className="grey" x={cx} dy="25px">de votre objectif</tspan>
     </text>
   );
   
@@ -37,13 +37,13 @@ function Score({scorePct,rest}) {
     <div className="score white-bg">
     <h2 className='scoreH2'>Score</h2>
     <ResponsiveContainer width="100%" height="100%">
-      <PieChart width="100%" height="100%" >
+      <PieChart  width={50} height={50} >
         <Pie
           data={data}
           cx="50%"
           cy="50%"
-          innerRadius={100}
-          outerRadius={120}
+          innerRadius='70%'
+          outerRadius='85%'
           fill="#f5f5f5"
           paddingAngle={0}
           dataKey="value"

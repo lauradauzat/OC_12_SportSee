@@ -51,7 +51,7 @@ nav ul {
     list-style: none;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -68,15 +68,18 @@ nav a {
 
 nav img {
     height: 57px;
+
+    position: relative;
+    left: -22px;
 }
 
 /*nav left */
 .navLeft-container {
     position: absolute;
-    width: 117px;
-    height: 1024px;
-    left: 0px;
-    top: 0px;
+    /* width: 117px; */
+    height: 100vh;
+    /* left: 0px; */
+    top: 88px;
     z-index: -9;
     background: #020203;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -85,7 +88,7 @@ nav img {
 .navbar {
     position: relative;
     left: 0;
-    top: 50%;
+    top: 43%;
     transform: translateY(-50%);
     padding: 20px;
 }
@@ -96,25 +99,26 @@ nav img {
 }
 
 .navbar a img {
-    width: 71px;
-    height: 71px;
+    width: 50px;
+    height: 50px;
     display: block;
     margin: 0 auto;
 }
 
 .cr {
-    color: #FFFFFF;
+    color: #d8d8d8;
     transform: rotate(-90deg);
-    left: -36px;
-    bottom: 119px;
+    left: -3px;
+    bottom: 162px;
     width: max-content;
     position: absolute;
+    font-size: 10px;
 }
 
 /*main*/
 
 .intro {
-    margin-bottom: 90px;
+    margin-bottom: 45px;
 }
 
 main {
@@ -124,9 +128,9 @@ main {
 
 h2 {
     padding-left: 30px;
-    font-size: 20px;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    margin-top: 20px;
 }
 
 .actquot {
@@ -236,11 +240,12 @@ line.recharts-cartesian-axis-tick-line {
 
 
 .charts-container > div {
-    min-height: 150px;
+    min-height: 100px;
     border-radius: 5px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: unset;
 }
 
 .charts-container > .actquot {
@@ -284,3 +289,38 @@ line.recharts-cartesian-axis-tick-line {
 
 /* activité quotidienne */
 
+
+
+/* Remove fixed width and height from .container */
+.container {
+    max-width: 100%;
+  }
+  
+  /* Add media query to adjust .container padding */
+  @media only screen and (max-width: 768px) {
+    .container {
+      padding: 0;
+    }
+  }
+  
+  /* Add media query to make .card-container elements stack vertically */
+  @media only screen and (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Add media query to make .card elements full width */
+  @media only screen and (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+  }
+  
+  /* Add media query to adjust font size for small screens */
+  @media only screen and (max-width: 768px) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.2rem;
+    }
+  }

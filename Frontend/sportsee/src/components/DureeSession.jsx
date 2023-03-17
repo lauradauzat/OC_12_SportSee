@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { LineChart, XAxis, YAxis, Tooltip, Line } from 'recharts';
+import { LineChart, XAxis, YAxis, Tooltip, Line, ResponsiveContainer } from 'recharts';
 
 function DureeSession(props) {
   const [backgroundColor, setBackgroundColor] = useState('rgb(255, 0, 0)'); // initial background color
@@ -32,12 +32,14 @@ function DureeSession(props) {
     <div className="session red-bg">
  {/*      <div className='bgMagicContainer' onClick={handleClick} style={{ background: backgroundColor }}> */}
         <h2>Durée moyenne des sessions</h2>
-        <LineChart width={300} height={300} data={data} style={{ fontFamily: 'Roboto' }}>
+        <ResponsiveContainer width="100%" height="100%">
+        <LineChart width={90} height={90}  data={data} style={{ fontFamily: 'Roboto' }}>
           <XAxis dataKey="day" tickCount={7} />
           <YAxis hide={true} />
           <Tooltip content={<CustomTooltip />} />
           <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" />
         </LineChart>
+        </ResponsiveContainer>
       </div>
 /*     </div> */
   );

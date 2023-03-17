@@ -26,10 +26,10 @@ function ActiviteQuotidienne(props) {
       <ResponsiveContainer width="100%" height="100%">
         
       
-      <BarChart data={activity} barGap={20} >
+      <BarChart  width={90} height={90} data={activity} barGap={20} >
  
          <Tooltip content={<CustomTooltip />} />
-        <Legend width={100} wrapperStyle={{ top: -70, right: 220, lineHeight: '40px' }} />
+        <Legend width={100} wrapperStyle={{ top: -55, right: 220, lineHeight: '40px' }} />
         <Bar dataKey="kg"  name="Poids (kg)" fill="#282D30" yAxisId="kg" barSize={10} radius={[10, 10, 0, 0]} />
         <Bar dataKey="kal"  name="Calories brûlées (kCal)"  fill="#E60000" yAxisId="kal" barSize={10} radius={[10, 10, 0, 0]} />
         <XAxis dataKey="name" />
