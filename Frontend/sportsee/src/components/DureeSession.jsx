@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { LineChart, XAxis, YAxis, Tooltip, Line, ResponsiveContainer } from 'recharts';
 
 function DureeSession(props) {
-  const [backgroundColor, setBackgroundColor] = useState('rgb(255, 0, 0)'); // initial background color
+
 
   const data = props.sessions;
 
- 
+
+
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -18,22 +19,14 @@ function DureeSession(props) {
     }
     return null
   }
-/* 
-  const handleClick = (event) => {
-    const x = event.nativeEvent.offsetX; // get x coordinate of click event
-    const chartX = event.currentTarget.querySelector('.recharts-wrapper').getBoundingClientRect().left; // get x position of closest line chart
-    const width = event.currentTarget.querySelector('.recharts-wrapper').clientWidth; // get width of closest line chart
-    const percentage = ((x - chartX) / width) * 100; // calculate percentage
-    const darkRed = `linear-gradient(to right, transparent ${percentage}%, #d11313 ${percentage}%)`; // create gradient background with alpha based on percentage
-    setBackgroundColor(darkRed); // update background color
-  } */
-  
+
+
   return (
     <div className="session red-bg">
- {/*      <div className='bgMagicContainer' onClick={handleClick} style={{ background: backgroundColor }}> */}
+
         <h2>Durée moyenne des sessions</h2>
-        <ResponsiveContainer width="100%" height="100%">
-        <LineChart width={90} height={90}  data={data} style={{ fontFamily: 'Roboto' }}>
+        <ResponsiveContainer >
+        <LineChart   data={data} style={{ fontFamily: 'Roboto' }}>
           <XAxis dataKey="day" tickCount={7} />
           <YAxis hide={true} />
           <Tooltip content={<CustomTooltip />} />
@@ -41,7 +34,7 @@ function DureeSession(props) {
         </LineChart>
         </ResponsiveContainer>
       </div>
-/*     </div> */
+
   );
   
 }
@@ -56,3 +49,4 @@ DureeSession.propTypes = {
 };
 
 export default DureeSession;
+

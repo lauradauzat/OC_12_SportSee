@@ -15,7 +15,7 @@ function Score({scorePct,rest}) {
     { name: 'Score', value: scorePct },
     { name: 'Rest', value: rest }
   ];
-  const COLORS = ['#FF0000', '#f5f5f5'];
+  const COLORS = ['#FF0000', 'white'];
 
   const renderLabel = ({ cx, cy, value }) => (
     <text 
@@ -44,7 +44,6 @@ function Score({scorePct,rest}) {
           cy="50%"
           innerRadius='70%'
           outerRadius='85%'
-          fill="#f5f5f5"
           paddingAngle={0}
           dataKey="value"
           labelLine={false}
@@ -56,6 +55,7 @@ function Score({scorePct,rest}) {
             <Cell key={`cell-${index}`} fill={COLORS[index]} />
           ))}
         </Pie>
+        
       </PieChart>
     </ResponsiveContainer>
   </div>

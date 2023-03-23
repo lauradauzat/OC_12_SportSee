@@ -21,7 +21,30 @@ export default class DataTransformer {
 
   transformPerformance(performance) {
     const data = performance.data.map(d => {
-      const kindName = performance.kind[d.kind];
+      var kindName = '';
+      switch (performance.kind[d.kind]) {
+        case 'energy': 
+          kindName = 'Énergie';
+          break;
+        case 'endurance':
+          kindName = 'Endurance';
+          break;
+        case 'strength':
+          kindName = 'Force';
+          break;
+        case 'intensity':
+          kindName = 'Intensité';
+          break; 
+        case 'speed': 
+          kindName = 'Vitesse';
+          break;
+          case 'cardio': 
+          kindName = 'Cardio';
+          break;
+
+        default:
+          break;
+      }
       return {
         name: kindName,
         value: d.value

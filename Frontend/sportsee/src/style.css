@@ -76,9 +76,7 @@ nav img {
 /*nav left */
 .navLeft-container {
     position: absolute;
-    /* width: 117px; */
-    height: 100vh;
-    /* left: 0px; */
+    height: 92vh;
     top: 88px;
     z-index: -9;
     background: #020203;
