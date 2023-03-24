@@ -4,6 +4,13 @@ import Radar from "./Radar";
 import Score from "./Score" 
 import Service from "../service";
 
+/**
+
+Main component displaying user data and statistics.
+@param {object} dataAPI - The user data fetched from the API.
+@param {string} id - The user ID.
+@returns {JSX.Element} - The JSX element containing the user data and statistics.
+*/
 
 
 function Main({ dataAPI, id}) {

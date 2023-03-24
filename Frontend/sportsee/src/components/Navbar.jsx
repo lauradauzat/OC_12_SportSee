@@ -1,3 +1,8 @@
+/**
+
+Renders a Navbar component with a logo, a navigation menu and icons.
+@returns {JSX.Element} The Navbar component
+*/
 function Navbar() {
     return (
         <>

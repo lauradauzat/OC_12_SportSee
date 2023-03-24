@@ -2,6 +2,14 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 import PropTypes from 'prop-types';
 
 
+/**
+ * A component that renders a radar chart using the Recharts library.
+ *
+ * @param {Object} props - The props object.
+ * @param {Array<Object>} props.performance - An array of objects representing performance data. Each object should have a `name` (string) and a `value` (number) property.
+ * @returns {JSX.Element} A React component that renders a responsive radar chart.
+ */
+
 function RadarChartComponent(props) {
 
 const data = props.performance; 
@@ -10,7 +18,7 @@ console.log(data);
   return (
     <div className='radar dark-bg'>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="30%" cy="30%" outerRadius="50%" data={data}>
+        <RadarChart cx="50%" cy="50%" outerRadius="60%" data={data} >
         <PolarGrid gridType="polygon" radialLines={false} />
           <PolarAngleAxis dataKey="name" />
   
