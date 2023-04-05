@@ -7,8 +7,8 @@ import Service from "../service";
 /**
 
 Main component displaying user data and statistics.
-@param {object} dataAPI - The user data fetched from the API.
-@param {string} id - The user ID.
+@param {object || null } dataAPI - The user data fetched from the API.
+@param {string || null } id - The user ID fetched from the URL.
 @returns {JSX.Element} - The JSX element containing the user data and statistics.
 */
 
@@ -18,7 +18,6 @@ function Main({ dataAPI, id}) {
     return <div>Loading...</div>
   }
 
- 
 
   const service = new Service(id, dataAPI);
   const firstName = service.firstName;
@@ -30,6 +29,8 @@ function Main({ dataAPI, id}) {
   const activity = service.activity;
   const performance = service.performance; 
   const {scorePct,rest} = service.score; 
+
+  
 
 
     return (

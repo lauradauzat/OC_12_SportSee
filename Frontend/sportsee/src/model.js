@@ -92,6 +92,7 @@ export default class DataTransformer {
    * @param {Array} activity - Array of activity data
    * @returns {Array} - Transformed activity data
    */
+  
   transformActivity(activity) { 
     const data = activity.map((session) => ({
         name: parseInt(session.day.split('-')[2]),
@@ -100,4 +101,6 @@ export default class DataTransformer {
     }));
     return data;
   }
+
+
 }

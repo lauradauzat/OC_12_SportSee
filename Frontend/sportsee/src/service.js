@@ -10,13 +10,15 @@ A service class that handles the retrieval of user data.
 // This var is used to switch between mock data and real data
 const mock = false;
 
+
+
 export default class Service {
     /**
 
     Creates an instance of Service.
     @constructor
-    @param {number} id - User ID.
-    @param {Object} dataAPI - Object containing user data.
+    @param {number || null } id - User ID.
+    @param {Object || null} dataAPI - Object containing user data.
     */
 
   constructor(id, dataAPI) {
@@ -33,7 +35,10 @@ export default class Service {
     this.sessions = dataTransformer.sessions;
     this.performance = dataTransformer.performance;
     this.score = dataTransformer.score;
+   
   }
+
+
 
   getMainData() {
     return mock

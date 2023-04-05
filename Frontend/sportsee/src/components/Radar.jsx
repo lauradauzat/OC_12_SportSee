@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 function RadarChartComponent(props) {
 
 const data = props.performance; 
-console.log(data);
+
 
   return (
     <div className='radar dark-bg'>
