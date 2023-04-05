@@ -6,6 +6,8 @@ import DataTransformer from './model';
 A service class that handles the retrieval of user data.
 @class Service
 */
+
+// This var is used to switch between mock data and real data
 const mock = false;
 
 export default class Service {

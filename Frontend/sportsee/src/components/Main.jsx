@@ -31,8 +31,6 @@ function Main({ dataAPI, id}) {
   const performance = service.performance; 
   const {scorePct,rest} = service.score; 
 
-  //console.log(firstName, calories, protein, carbs, fat, sessions, performance, score);
-
 
     return (
         <>

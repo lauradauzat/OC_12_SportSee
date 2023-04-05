@@ -7,19 +7,20 @@ import PropTypes from 'prop-types';
  * @param {Object} props - The props object.
  * @param {number} props.scorePct - The score percentage value to be displayed.
  * @param {number} props.rest - Value used to have the score displayed properly. It is the rest of the score percentage to 100.
- * @returns {JSX.Element} - A React component.
+ * @returns {JSX.Element} - A React component that display the score of achievement of the user.
  */
 
 import { PieChart, Pie, Cell, ResponsiveContainer} from 'recharts';
 
 function Score({scorePct,rest}) {
 
-
+//Data to be displayed in the pie chart
   const data = [
     { name: 'Score', value: scorePct },
     { name: 'Rest', value: rest }
   ];
 
+  //Blank pie chart to have a white background
   const blank = 
   [
     { name: 'Blank', value: 100 },
