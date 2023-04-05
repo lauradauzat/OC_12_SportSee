@@ -36,6 +36,12 @@ body {
     background-color: #282D30;
 }
 
+.error404 {
+    display: flex;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
 
 /*nav top */
 nav {

@@ -94,6 +94,7 @@ export default class DataTransformer {
    */
   
   transformActivity(activity) { 
+    console.log(activity)
     const data = activity.map((session) => ({
         name: parseInt(session.day.split('-')[2]),
         kg: session.kilogram,

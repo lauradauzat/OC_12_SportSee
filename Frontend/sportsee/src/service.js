@@ -2,13 +2,12 @@ import mockData from './assets/mockdata';
 import DataTransformer from './model';
 
 /**
-
 A service class that handles the retrieval of user data.
 @class Service
 */
 
 // This var is used to switch between mock data and real data
-const mock = false;
+const mock = true;
 
 
 
@@ -22,6 +21,7 @@ export default class Service {
     */
 
   constructor(id, dataAPI) {
+   
     this._userId = mock ? 18 : id;
     this.data = mock ? mockData : dataAPI;
     this.mainData = this.getMainData();
@@ -52,7 +52,7 @@ export default class Service {
 
   getActivity() {
     const activity = mock
-      ? this.data.USER_ACTIVITY.find(user => user.userId === this._userId)
+      ? this.data.USER_ACTIVITY.find(user => user.userId === this._userId).sessions
       : this.data.activity.data.sessions;
 
     return activity;

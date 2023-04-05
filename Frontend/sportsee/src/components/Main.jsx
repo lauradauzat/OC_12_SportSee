@@ -15,7 +15,7 @@ Main component displaying user data and statistics.
 
 function Main({ dataAPI, id}) {
   if (!dataAPI) {
-    return <div>Loading...</div>
+    return <div className="error404">Error 404 ... L'utilisateur est introuvable !</div>
   }
 
 
@@ -29,6 +29,8 @@ function Main({ dataAPI, id}) {
   const activity = service.activity;
   const performance = service.performance; 
   const {scorePct,rest} = service.score; 
+
+  
 
   
 

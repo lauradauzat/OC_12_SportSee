@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if(id != null) {
+        
         const response0 = await fetch(url);
         const mainData = await response0.json();
         const response1 = await fetch(`${url}/activity`);
@@ -52,7 +52,7 @@ function App() {
           averageSessions: averageSessionsData,
           performance: performanceData
         }));
-      } 
+      
         
       } catch (error) {
         console.error(error);
