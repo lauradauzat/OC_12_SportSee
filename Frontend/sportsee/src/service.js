@@ -7,7 +7,7 @@ A service class that handles the retrieval of user data.
 */
 
 // This var is used to switch between mock data and real data
-const mock = true;
+const mock = false;
 
 
 

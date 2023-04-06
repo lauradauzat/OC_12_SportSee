@@ -19,6 +19,7 @@ function App() {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
 
+
   /**
    * The data retrieved from the API.
    *
@@ -33,33 +34,37 @@ function App() {
 
   
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        
-        const response0 = await fetch(url);
-        const mainData = await response0.json();
-        const response1 = await fetch(`${url}/activity`);
-        const activityData = await response1.json();
-        const response2 = await fetch(`${url}/average-sessions`);
-        const averageSessionsData = await response2.json();
-        const response3 = await fetch(`${url}/performance`);
-        const performanceData = await response3.json();
+    // Check if id is not null before fetching data
+    if (id !== null) {
+      const fetchData = async () => {
+        try {
+          const response0 = await fetch(url);
+          if (response0.status === 404) {
+            console.error('User not found');
+            return;
+          }
+          const mainData = await response0.json();
+          const response1 = await fetch(`${url}/activity`);
+          const activityData = await response1.json();
+          const response2 = await fetch(`${url}/average-sessions`);
+          const averageSessionsData = await response2.json();
+          const response3 = await fetch(`${url}/performance`);
+          const performanceData = await response3.json();
 
-        setDataAPI(prevData => ({
-          ...prevData,
-          main: mainData,
-          activity: activityData,
-          averageSessions: averageSessionsData,
-          performance: performanceData
-        }));
-      
-        
-      } catch (error) {
-        console.error(error);
-      }
-    };
+          setDataAPI(prevData => ({
+            ...prevData,
+            main: mainData,
+            activity: activityData,
+            averageSessions: averageSessionsData,
+            performance: performanceData
+          }));
+        } catch (error) {
+          console.error(error);
+        }
+      };
 
-    fetchData();
+      fetchData();
+    }
   }, [id, url]);
 
 

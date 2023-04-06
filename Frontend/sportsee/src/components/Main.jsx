@@ -14,7 +14,8 @@ Main component displaying user data and statistics.
 
 
 function Main({ dataAPI, id}) {
-  if (!dataAPI) {
+  //if the id is null, it means that we are using the mock data
+  if (!dataAPI && id !== null ) {
     return <div className="error404">Error 404 ... L'utilisateur est introuvable !</div>
   }
 
