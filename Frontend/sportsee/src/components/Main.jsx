@@ -3,6 +3,7 @@ import DureeSession from "./DureeSession";
 import Radar from "./Radar";
 import Score from "./Score" 
 import Service from "../service";
+import PropTypes from 'prop-types';
 
 /**
 
@@ -89,6 +90,12 @@ function Main({ dataAPI, id}) {
         </>
     )
 }
+
+
+Main.propTypes = {  
+  dataAPI: PropTypes.object,
+  id: PropTypes.string,
+};
 
 
 

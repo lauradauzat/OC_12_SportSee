@@ -10,6 +10,37 @@ A service class that handles the retrieval of user data.
 const mock = false;
 
 
+// A function that fetches data from the API
+
+export const fetchData = async (url, id) => {
+  try {
+    const response0 = await fetch(url);
+    if (response0.status === 404) {
+      console.error('User not found');
+      return null;
+    }
+    const mainData = await response0.json();
+    const response1 = await fetch(`${url}/activity`);
+    const activityData = await response1.json();
+    const response2 = await fetch(`${url}/average-sessions`);
+    const averageSessionsData = await response2.json();
+    const response3 = await fetch(`${url}/performance`);
+    const performanceData = await response3.json();
+
+    return {
+      main: mainData,
+      activity: activityData,
+      averageSessions: averageSessionsData,
+      performance: performanceData
+    };
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
+
+
 
 export default class Service {
     /**
